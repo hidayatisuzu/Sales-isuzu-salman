@@ -1,0 +1,9 @@
+/* responsive.css - tambahan responsif & tweaks */
+@media (max-width:699px){
+  .nav-list{display:none;flex-direction:column;background:#fff;position:absolute;top:64px;right:8px;padding:8px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+  .nav-toggle{display:inline-block}
+  .header-inner{position:relative}
+  .hero img{height:200px;object-fit:cover}
+  .gallery-grid{grid-template-columns:repeat(2,1fr)}
+  .card-grid{grid-template-columns:repeat(1,1fr)}
+}
