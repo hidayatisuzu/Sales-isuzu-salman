@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>./index.html</loc><priority>1.00</priority></url>
+  <url><loc>./produk/index.html</loc><priority>0.80</priority></url>
+  <url><loc>./produk/traga.html</loc><priority>0.64</priority></url>
+  <url><loc>./price-list.html</loc><priority>0.64</priority></url>
+  <url><loc>./galeri.html</loc><priority>0.64</priority></url>
+  <url><loc>./testimoni.html</loc><priority>0.64</priority></url>
+  <url><loc>./faq.html</loc><priority>0.64</priority></url>
+  <url><loc>./kontak.html</loc><priority>0.80</priority></url>
+  <url><loc>./kebijakan-privasi.html</loc><priority>0.50</priority></url>
+</urlset>
