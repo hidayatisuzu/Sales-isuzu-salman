@@ -1,0 +1,8 @@
+# (Place actual image files at these paths; below are suggested filenames used in HTML)
+assets/img/unit-traga-1.jpg
+assets/img/unit-traga-2.jpg
+assets/img/unit-nlr-1.jpg
+assets/img/serah-terima-1.jpg
+assets/img/serah-terima-2.jpg
+assets/img/workshop.jpg
+assets/img/placeholder.png
