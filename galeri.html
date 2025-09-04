@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Galeri — Dealer Isuzu Jakarta</title>
+  <meta name="description" content="Galeri serah terima unit & foto unit Isuzu.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+  <header class="site-header sticky">
+    <div class="container header-inner">
+      <a class="brand" href="./"><img src="assets/img/placeholder.png" alt="Logo" loading="lazy"><span>Dealer Isuzu Jakarta</span></a>
+      <nav class="main-nav"><ul class="nav-list">
+        <li><a href="./">Beranda</a></li>
+        <li><a href="produk/index.html">Produk</a></li>
+        <li><a href="galeri.html" class="active">Galeri</a></li>
+      </ul></nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb"><ol><li><a href="./">Beranda</a></li><li>Galeri</li></ol></nav>
+
+    <h1>Galeri</h1>
+    <p>Foto serah terima & unit. Klik untuk memperbesar.</p>
+
+    <div class="gallery-grid" role="list">
+      <img src="assets/img/serah-terima-1.jpg" alt="Serah terima pelanggan - 1" loading="lazy" tabindex="0">
+      <img src="assets/img/serah-terima-2.jpg" alt="Serah terima pelanggan - 2" loading="lazy" tabindex="0">
+      <img src="assets/img/unit-traga-1.jpg" alt="Isuzu Traga - tampak depan" loading="lazy" tabindex="0">
+      <img src="assets/img/unit-traga-2.jpg" alt="Isuzu Traga - kabin" loading="lazy" tabindex="0">
+      <img src="assets/img/workshop.jpg" alt="Bengkel & servis" loading="lazy" tabindex="0">
+      <img src="assets/img/placeholder.png" alt="Placeholder unit" loading="lazy" tabindex="0">
+    </div>
+
+    <div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Perbesar gambar">
+      <button class="close-lightbox" aria-label="Tutup">&times;</button>
+      <img src="" alt="">
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>&copy; Dealer Isuzu Jakarta</p></div></footer>
+
+  <script>
+    // Simple lightbox
+    const images = document.querySelectorAll('.gallery-grid img');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg = lightbox.querySelector('img');
+    const lbClose = lightbox.querySelector('.close-lightbox');
+
+    images.forEach(img => {
+      img.addEventListener('click', () => openLightbox(img));
+      img.addEventListener('keypress', (e) => { if(e.key === 'Enter') openLightbox(img); });
+    });
+    function openLightbox(img){
+      lbImg.src = img.src;
+      lbImg.alt = img.alt;
+      lightbox.style.display = 'flex';
+      lightbox.setAttribute('aria-hidden','false');
+      lbClose.focus();
+    }
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e)=> { if(e.target === lightbox) closeLightbox(); });
+    function closeLightbox(){ lightbox.style.display='none'; lightbox.setAttribute('aria-hidden','true'); lbImg.src=''; }
+  </script>
+
+  <script src="assets/js/wa-floating.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
