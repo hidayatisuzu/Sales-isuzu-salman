@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kontak — Dealer Isuzu Jakarta</title>
+  <meta name="description" content="Hubungi Sales Salman untuk konsultasi armada, penawaran, dan kunjungan showroom.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+  <header class="site-header sticky">
+    <div class="container header-inner">
+      <a class="brand" href="./"><img src="assets/img/placeholder.png" alt="Logo" loading="lazy"><span>Dealer Isuzu Jakarta</span></a>
+      <nav class="main-nav"><ul class="nav-list"><li><a href="./">Beranda</a></li></ul></nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="breadcrumb"><ol><li><a href="./">Beranda</a></li><li>Kontak</li></ol></nav>
+
+    <h1>Kontak & Lokasi</h1>
+    <div class="contact-grid">
+      <section>
+        <h2>Hubungi Sales Salman</h2>
+        <p>WhatsApp: <a href="https://wa.me/6285864966633?text=Halo%20Salman,%20saya%20tertarik%20dengan%20truk%20Isuzu." aria-label="Chat Sales Salman via WhatsApp">+62 858-6496-6633</a></p>
+        <p>Alamat: Jalan Danau Sunter Utara Blok O3 Kav 30 Sunter II, Jakarta Utara</p>
+        <p>Jam Operasional: Senin–Sabtu 08:00–17:00</p>
+
+        <h3>Dokumen yang umum dibutuhkan</h3>
+        <ul>
+          <li>KTP pemesan / penanggung jawab</li>
+          <li>NPWP (jika diperlukan)</li>
+          <li>SIUP / NIB (untuk perusahaan)</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Form Kontak</h2>
+        <!-- Note: untuk produksi gunakan Formspree/Netlify Forms/Backend. Saat ini demo menggunakan mailto -->
+        <form id="contactForm" onsubmit="submitContact(event)" aria-label="Form kontak">
+          <label>Nama<span class="required">*</span><input type="text" id="cf-name" required></label>
+          <label>Telepon/WA<span class="required">*</span><input type="tel" id="cf-phone" required></label>
+          <label>Perusahaan<input type="text" id="cf-company"></label>
+          <label>Kebutuhan / Pesan<textarea id="cf-message" rows="4"></textarea></label>
+          <p><button class="btn btn-primary" type="submit">Kirim & Chat Sales Salman</button></p>
+        </form>
+      </section>
+    </div>
+
+    <h2>Lokasi di Google Maps</h2>
+    <div class="map-wrap" aria-hidden="false">
+      <!-- Embed Google Maps (ganti src dengan link embed Anda) -->
+      <iframe title="Lokasi Dealer Isuzu Jakarta" loading="lazy" src="https://www.google.com/maps?q=Jl.+Danau+Sunter+Utara+Blok+O3+Kav+30+Sunter+II+Jakarta&output=embed" aria-label="Peta lokasi dealer" ></iframe>
+    </div>
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>&copy; Dealer Isuzu Jakarta</p></div></footer>
+
+  <script>
+    function submitContact(e){
+      e.preventDefault();
+      const name = document.getElementById('cf-name').value.trim();
+      const phone = document.getElementById('cf-phone').value.trim();
+      const company = document.getElementById('cf-company').value.trim();
+      const msg = document.getElementById('cf-message').value.trim();
+      // Mailto fallback: opens email compose in client. For real backend, replace this.
+      const subject = encodeURIComponent('Form Kontak — Dealer Isuzu Jakarta');
+      const body = encodeURIComponent(`Nama: ${name}\nTelepon: ${phone}\nPerusahaan: ${company}\nPesan: ${msg}`);
+      window.location.href = `mailto:your-email@example.com?subject=${subject}&body=${body}`;
+      // Also open WA chat to ensure fast response:
+      const waMsg = encodeURIComponent(`Halo Salman, saya ${name}. Saya tertarik dan mengirim detail via email. Mohon info lanjut.`);
+      window.open(`https://wa.me/6285864966633?text=${waMsg}`, '_blank');
+    }
+  </script>
+
+  <script src="assets/js/wa-floating.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
