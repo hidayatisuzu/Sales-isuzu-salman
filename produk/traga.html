@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Isuzu Traga — Detail Unit | Dealer Isuzu Jakarta</title>
+  <meta name="description" content="Detail Isuzu Traga: spesifikasi ringkas, opsi karoseri, dan simulasi kredit non-mengikat. Chat Sales Salman untuk penawaran resmi.">
+  <meta property="og:title" content="Isuzu Traga — Dealer Isuzu Jakarta">
+  <meta property="og:description" content="Detail Isuzu Traga & simulasi cicilan ilustratif. Konsultasi karoseri.">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+</head>
+<body>
+  <header class="site-header sticky">
+    <div class="container header-inner">
+      <a class="brand" href="../" aria-label="Beranda Dealer Isuzu Jakarta">
+        <img src="../assets/img/placeholder.png" alt="Logo" loading="lazy"><span>Dealer Isuzu Jakarta</span>
+      </a>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <ul class="nav-list">
+          <li><a href="../">Beranda</a></li>
+          <li><a href="index.html">Produk</a></li>
+          <li><a href="../kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol>
+        <li><a href="../">Beranda</a></li>
+        <li><a href="index.html">Produk</a></li>
+        <li aria-current="page">Isuzu Traga</li>
+      </ol>
+    </nav>
+
+    <article>
+      <h1>Isuzu Traga</h1>
+      <div class="product-detail-grid">
+        <section class="gallery" aria-labelledby="gallery-title">
+          <h2 id="gallery-title" class="sr-only">Galeri Isuzu Traga</h2>
+          <div class="gallery-grid">
+            <img src="../assets/img/unit-traga-1.jpg" alt="Isuzu Traga - tampak samping" loading="lazy">
+            <img src="../assets/img/unit-traga-2.jpg" alt="Isuzu Traga - kabin" loading="lazy">
+            <img src="../assets/img/serah-terima-1.jpg" alt="Serah terima Isuzu Traga" loading="lazy">
+          </div>
+        </section>
+
+        <section class="specs" aria-labelledby="specs-title">
+          <h2 id="specs-title">Spesifikasi Ringkas</h2>
+          <ul>
+            <li>Dimensi: (contoh) pxLxT — 5.000 x 1.720 x 1.950 mm</li>
+            <li>Mesin: Diesel 4JA1 (contoh)</li>
+            <li>Daya: ~87 PS (contoh)</li>
+            <li>Transmisi: Manual 5-speed</li>
+            <li>GVW: ~2.5 ton (contoh)</li>
+          </ul>
+
+          <h3>Opsi Karoseri</h3>
+          <p>Kami merekomendasikan karoseri box, pick-up tray, atau refrigerated (sesuai kebutuhan). Konsultasi karoseri tersedia.</p>
+
+          <h3>Simulasi Cicilan (ilustrasi)</h3>
+          <form id="simulasi-form" class="simulasi" aria-label="Form simulasi cicilan">
+            <label>
+              Harga (Rp):
+              <input type="number" id="harga" value="250000000" aria-label="Harga unit">
+            </label>
+            <label>
+              Uang Muka (Rp):
+              <input type="number" id="dp" value="50000000" aria-label="Uang muka">
+            </label>
+            <label>
+              Tenor (bulan):
+              <select id="tenor" aria-label="Tenor">
+                <option>12</option>
+                <option>24</option>
+                <option selected>36</option>
+                <option>48</option>
+              </select>
+            </label>
+            <p><button type="button" class="btn btn-primary" id="calcBtn">Hitung Cicilan (Ilustratif)</button></p>
+            <p id="simulasi-result" aria-live="polite"></p>
+          </form>
+
+          <p><a class="btn btn-primary" href="https://wa.me/6285864966633?text=Halo%20Salman,%20saya%20ingin%20info%20Isuzu%20Traga." aria-label="Chat Sales Salman untuk Traga">Chat Sales Salman di WhatsApp</a></p>
+        </section>
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container"><p>&copy; Dealer Isuzu Jakarta</p></div>
+  </footer>
+
+  <script>
+    // simple simulasi (non-mengikat)
+    function formatIDR(n){ return new Intl.NumberFormat('id-ID',{style:'currency',currency:'IDR',maximumFractionDigits:0}).format(n); }
+    document.getElementById('calcBtn').addEventListener('click', function(){
+      const harga = Number(document.getElementById('harga').value) || 0;
+      const dp = Number(document.getElementById('dp').value) || 0;
+      const tenor = Number(document.getElementById('tenor').value) || 36;
+      const pokok = Math.max(harga - dp, 0);
+      const monthly = pokok / tenor;
+      document.getElementById('simulasi-result').textContent = `Cicilan estimasi (tanpa bunga/biaya): ${formatIDR(monthly)} / bulan (tenor ${tenor} bln). Ini simulasi non-mengikat. Hubungi Sales untuk perhitungan resmi.`;
+    });
+  </script>
+
+  <script src="../assets/js/wa-floating.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+</body>
+</html>
