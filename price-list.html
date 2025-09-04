@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Price List — Dealer Isuzu Jakarta</title>
+  <meta name="description" content="Price list unit Isuzu. Harga hubungi Sales Salman. Harga dapat berubah tanpa pemberitahuan.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+  <header class="site-header sticky">
+    <div class="container header-inner">
+      <a class="brand" href="./"><img src="assets/img/placeholder.png" alt="Logo" loading="lazy"><span>Dealer Isuzu Jakarta</span></a>
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <ul class="nav-list">
+          <li><a href="./">Beranda</a></li>
+          <li><a href="produk/index.html">Produk</a></li>
+          <li><a class="active" href="price-list.html">Price List</a></li>
+          <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <ol><li><a href="./">Beranda</a></li><li>Price List</li></ol>
+    </nav>
+
+    <h1>Price List (Contoh — edit langsung)</h1>
+    <p>Catatan: Harga dapat berubah tanpa pemberitahuan. Hubungi Sales Salman untuk penawaran resmi.</p>
+
+    <div class="table-wrap" role="region" aria-label="Daftar harga">
+      <table id="priceTable" class="price-table">
+        <thead>
+          <tr><th>Model</th><th>Varian</th><th>Tenaga (PS)</th><th>Harga</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td contenteditable="true">Isuzu Traga</td>
+            <td contenteditable="true">Pick Up Standard</td>
+            <td contenteditable="true">87</td>
+            <td contenteditable="true">Hubungi kami</td>
+          </tr>
+          <tr>
+            <td contenteditable="true">Isuzu NLR</td>
+            <td contenteditable="true">NLR 55</td>
+            <td contenteditable="true">110</td>
+            <td contenteditable="true">Hubungi kami</td>
+          </tr>
+          <tr>
+            <td contenteditable="true">Isuzu FVM</td>
+            <td contenteditable="true">FVM 6x2</td>
+            <td contenteditable="true">260</td>
+            <td contenteditable="true">Hubungi kami</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p>
+      <a class="btn btn-outline" id="downloadPdf" href="#" aria-label="Unduh price list PDF">Unduh PDF (dummy)</a>
+      <small class="muted">Untuk simpan permanen, edit file ini di sumber (HTML) atau gunakan CMS/CSV.</small>
+    </p>
+  </main>
+
+  <footer class="site-footer"><div class="container"><p>&copy; Dealer Isuzu Jakarta</p></div></footer>
+
+  <script>
+    // Simple "dummy" PDF download: create text file as demo
+    document.getElementById('downloadPdf').addEventListener('click', function(e){
+      e.preventDefault();
+      const rows = Array.from(document.querySelectorAll('#priceTable tbody tr')).map(tr => {
+        return Array.from(tr.children).map(td => td.textContent.trim()).join(' | ');
+      });
+      const blob = new Blob([rows.join('\n')], {type:'text/plain'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a'); a.href = url; a.download = 'price-list.txt'; document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    });
+  </script>
+
+  <script src="assets/js/wa-floating.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
