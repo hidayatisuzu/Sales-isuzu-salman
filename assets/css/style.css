@@ -1,192 +1,79 @@
- /* Reset dasar */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* style-final.css - versi fix tanpa background biru & tulisan dummy */
+:root{
+  --primary:#0b5ed7;
+  --accent:#0747a6;
+  --bg:#ffffff;
+  --muted:#666;
+  --radius:12px;
+  --container:1100px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
 }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:#111;line-height:1.45}
+.container{max-width:var(--container);margin:0 auto;padding:1rem}
+.site-header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:50}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:0.5rem 1rem}
+.brand{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:inherit}
+.brand img{width:40px;height:40px;border-radius:8px;object-fit:cover}
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:0.5rem}
+.nav-list a{display:block;padding:0.5rem 0.75rem;text-decoration:none;border-radius:8px;color:var(--muted)}
+.nav-list a.active, .nav-list a:hover{background:#f1f5ff;color:var(--primary)}
 
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #fff; /* putih biar clean */
-  color: #333;
-}
+.nav-toggle{display:none;background:none;border:1px solid #ddd;padding:6px;border-radius:6px}
 
-/* Header */
-header {
-  background: #002147; /* biru navy khas Isuzu */
-  color: #fff;
-  padding: 20px 0;
-  text-align: center;
-}
+/* hero fix */
+.hero{display:grid;grid-template-columns:1fr;gap:1rem;align-items:center;padding:1.5rem;background:#fff}
+.hero img{width:100%;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.hero .lead{color:var(--muted)}
 
-header h1 {
-  margin-bottom: 5px;
-  font-size: 2rem;
-}
+.btn{display:inline-block;padding:0.6rem 1rem;border-radius:10px;text-decoration:none;border:1px solid transparent}
+.btn-primary{background:var(--primary);color:#fff}
+.btn-outline{background:transparent;border-color:#ddd;color:var(--muted)}
+.btn-small{padding:0.4rem 0.6rem;font-size:0.95rem}
 
-header p {
-  font-size: 1.2rem;
-}
+.features-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.features-grid article{background:#fff;padding:1rem;border-radius:12px;border:1px solid #f0f0f0}
 
-/* Navigasi */
-nav {
-  background: #004080;
-  display: flex;
-  justify-content: center;
-}
+.card-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.card{background:#fff;padding:1rem;border-radius:12px;border:1px solid #f4f4f4}
+.card img{width:100%;height:150px;object-fit:cover;border-radius:8px}
 
-nav a {
-  color: #fff;
-  padding: 14px 20px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
+.alamat{background:#fbfbff;padding:1rem;border-radius:12px;margin:1rem 0}
 
-nav a:hover {
-  background: #0066cc;
-}
+.product-card{background:#fff;padding:0.8rem;border-radius:12px;border:1px solid #f1f1f1}
+.product-card img{width:100%;height:120px;object-fit:contain;border-radius:8px}
 
-/* Hero Section */
-.hero {
-  background: url("../images/hero-truck.jpg") center center / contain no-repeat;
-  text-align: center;
-  padding: 80px 20px;
-}
+.product-detail-grid{display:grid;grid-template-columns:1fr;gap:1rem}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.gallery-grid img{width:100%;height:100px;object-fit:cover;border-radius:8px;cursor:pointer}
 
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
+.specs ul{padding-left:1.25rem}
+.simulasi label{display:block;margin-bottom:0.5rem}
+.simulasi input, .simulasi select, textarea{width:100%;padding:0.5rem;border:1px solid #ddd;border-radius:8px}
 
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
-}
+.table-wrap{overflow:auto}
+.price-table{width:100%;border-collapse:collapse}
+.price-table th,.price-table td{padding:0.6rem;border:1px solid #eee;text-align:left}
 
-.hero .btn {
-  background: #e30613; /* merah khas Isuzu */
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 5px;
-}
+.gallery-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.8);align-items:center;justify-content:center;z-index:100}
+.lightbox img{max-width:90%;max-height:90%}
+.close-lightbox{position:absolute;top:16px;right:16px;background:#fff;border-radius:50%;width:36px;height:36px;border:0;font-size:1.25rem}
 
-.hero .btn:hover {
-  background: #b3000f;
-}
+.site-footer{padding:1rem;border-top:1px solid #eee;background:#fff;margin-top:2rem}
 
-/* Produk */
-.products {
-  padding: 40px 20px;
-  text-align: center;
-}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 
-.products h2 {
-  margin-bottom: 20px;
-}
+/* accessibility focus */
+a:focus, button:focus, input:focus, textarea:focus { outline:3px solid rgba(11,94,215,0.25); outline-offset:3px }
 
-.product-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-}
-
-.product {
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  background: #fafafa;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-.product img {
-  max-width: 100%;
-  height: 180px;
-  object-fit: contain; /* biar ga ketarik */
-  margin-bottom: 15px;
-}
-
-.product h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-}
-
-.product p {
-  font-size: 1rem;
-}
-
-/* Galeri */
-.gallery {
-  padding: 40px 20px;
-  background: #f4f4f4;
-}
-
-.gallery h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.gallery-images {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 15px;
-}
-
-.gallery-images img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 10px;
-}
-
-/* Kontak */
-.contact {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.contact h2 {
-  margin-bottom: 15px;
-}
-
-.contact p {
-  margin: 10px 0;
-}
-
-/* Footer */
-footer {
-  background: #002147;
-  color: #fff;
-  text-align: center;
-  padding: 15px 10px;
-  margin-top: 20px;
-  font-size: 0.9rem;
-}
-
-/* Tombol WhatsApp melayang */
-.whatsapp-float {
-  position: fixed;
-  width: 60px;
-  height: 60px;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25d366;
-  color: #fff;
-  border-radius: 50%;
-  text-align: center;
-  font-size: 30px;
-  box-shadow: 2px 2px 3px #999;
-  z-index: 100;
-}
-
-.whatsapp-float i {
-  margin-top: 15px;
+/* small screens base layout */
+@media(min-width:700px){
+  .hero{grid-template-columns:1fr 1fr}
+  .features-grid{grid-template-columns:repeat(3,1fr)}
+  .card-grid{grid-template-columns:repeat(3,1fr)}
+  .gallery-grid{grid-template-columns:repeat(3,1fr)}
+  .product-detail-grid{grid-template-columns:1fr 1fr}
+  .nav-toggle{display:none}
 }
